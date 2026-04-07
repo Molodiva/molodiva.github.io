@@ -1,0 +1,418 @@
+body {
+    /* Фоновое изображение */
+    background-image: url('C:/Users/NB/Desktop/beauty-clinic/images/interior.jpg'); /* Путь к твоей картинке */
+    background-size: cover; /* Растягиваем картинку, чтобы она покрывала весь экран */
+    background-position: center; /* Центрируем картинку */
+    background-attachment: fixed; /* Делаем фон неподвижным при прокрутке (красивый эффект) */
+
+    /* Затемняющий слой (очень важная хитрость) */
+    position: relative; /* Это нужно для позиционирования псевдоэлемента */
+
+    /* Шрифты и отступы (оставляем как есть) */
+    font-family: Arial, sans-serif;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 20px;
+}
+/* Полупрозрачный слой поверх фона */
+body::before {
+    content: "";
+    position: fixed; /* Прикрепляем слой к окну браузера */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(249, 245, 240, 0.5); /* Твой кремовый цвет с прозрачностью 90% */
+    pointer-events: none; /* Это волшебное свойство: сквозь слой можно нажимать на кнопки! */
+    z-index: -1; /* Отправляем слой назад, чтобы текст был поверх */
+}
+
+header {
+    text-align: center; /* Выравниваем текст в шапке по центру */
+    margin-bottom: 3.5rem; /* Отступ снизу от шапки до основного контента */
+}
+
+h1 {
+    color: #996515; /* Золотой цвет для главного заголовка (код похож на цвет темного золота) */
+    font-size: 48px;
+}
+
+h2 {
+    text-align: center; /* Выравниваем текст в шапке по центру */
+    color: #996515; /* Такой же золотой для подзаголовков */
+    border-bottom: 2px solid #e6d5b8; /* Добавляем светлую линию под подзаголовками */
+    padding-bottom: 5px; /* Немного отступа от текста до линии */
+}
+
+section {
+    margin-bottom: 40px; /* Отступ между разделами (специалисты и приветствие) */
+    padding: 20px; /* Внутренние отступы в разделах */
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для разделов, чтобы они выделялись на общем фоне */
+    border-radius: 10px; /* Немного скругляем углы */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Легкая тень для объема */
+}
+
+footer {
+    text-align: center; /* Центрируем текст в подвале */
+    margin-top: 40px; /* Отступ сверху */
+    padding-top: 20px; /* Внутренний отступ сверху */
+    border-top: 1px solid #e0d6cc; /* Линия сверху, чтобы отделить подвал */
+    font-size: 0.9em; /* Делаем шрифт чуть меньше */
+    color: #777777; /* Делаем цвет чуть бледнее */
+}
+/* Сетка для карточек специалистов */
+.specialists-grid {
+    display: grid; /* Включаем сетку */
+    grid-template-columns: repeat(3, 1fr); /* Три колонки одинаковой ширины */
+    gap: 25px; /* Расстояние между карточками */
+    margin-top: 30px;
+}
+
+/* Стили одной карточки */
+.specialist-card {
+    background-color: rgba(255, 255, 255, 0.15); /* Сильная прозрачность */
+    backdrop-filter: blur(5px); /* Размытие фона за карточкой (эффект матового стекла) */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Легкая обводка */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Плавный эффект при наведении */
+}
+
+.specialist-card:hover {
+    transform: translateY(-5px); /* Эффект подъема при наведении */
+}
+
+/* Фотография специалиста */
+.specialist-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Делаем фото круглым */
+    object-fit: cover; /* Важно! Обрезает фото, чтобы оно ровно влезло в круг */
+    border: 3px solid #b8860b; /* Золотая рамка */
+    margin-bottom: 15px;
+}
+
+/* Должность специалиста */
+.specialist-title {
+    font-weight: bold;
+    color: #b8860b; /* Золотой цвет */
+    margin: 5px 0 10px;
+    font-size: 1.1em;
+}
+
+/* Описание */
+.specialist-desc {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+/* Убираем фон только у секции со специалистами */
+.specialists {
+    background-color: transparent; /* Прозрачный фон */
+    box-shadow: none; /* Убираем тень у секции, если она мешает */
+}
+.main-menu {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.main-menu a {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.main-menu a:hover {
+    background-color: rgba(184, 134, 11, 0.2);
+    color: #b8860b;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Секция услуг */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.35);
+    border-color: rgba(184, 134, 11, 0.5);
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #b8860b;
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+.service-desc {
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.service-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #b8860b;
+    margin: 15px 0;
+}
+
+.service-btn {
+    background-color: #b8860b;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+    background-color: #9a6e0a;
+    transform: scale(1.05);
+}
+/* Адаптивность */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Одна колонка на телефонах */
+    }
+    
+    .specialists-grid {
+        grid-template-columns: 1fr; /* И специалисты тоже в одну колонку */
+    }
+    
+    .service-card {
+        padding: 20px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+}
+/* Модальное окно */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #b8860b;
+}
+
+.modal-content h3 {
+    color: #b8860b;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4a4a4a;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #b8860b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #9a6e0a;
+}
+
+.form-note {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 15px;
+}
+/* Контакты */
+.contacts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contacts-info {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-icon {
+    font-size: 28px;
+    min-width: 45px;
+}
+
+.contact-item h4 {
+    color: #b8860b;
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #4a4a4a;
+    line-height: 1.4;
+}
+
+.contact-item a {
+    color: #4a4a4a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #b8860b;
+}
+
+.contacts-map {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-height: 300px;
+}
+
+.contacts-map iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.map-note {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Адаптивность для контактов */
+@media (max-width: 768px) {
+    .contacts-container {
+        grid-template-columns: 1fr;
+    }
+}
