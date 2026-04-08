@@ -415,3 +415,8 @@ html {
         grid-template-columns: 1fr;
     }
 }
+.service-icon {
+    color: #b8860b; /* Твой золотой цвет */
+    font-size: 40px;
+    margin-bottom: 15px;
+}
