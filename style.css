@@ -1,6 +1,5 @@
 body {
     /* Фоновое изображение */
-    background-color: red;
     background-image: url('images/interior.jpg'); /* Путь к твоей картинке */
     background-size: cover; /* Растягиваем картинку, чтобы она покрывала весь экран */
     background-position: center; /* Центрируем картинку */
