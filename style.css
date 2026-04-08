@@ -1,11 +1,9 @@
 body {
     /* Фоновое изображение */
-    
-    background-image: url('/images/interior.jpg'); /* Путь к твоей картинке */
+    background-image: url('images/interior.jpg'); /* Путь к твоей картинке */
     background-size: cover; /* Растягиваем картинку, чтобы она покрывала весь экран */
     background-position: center; /* Центрируем картинку */
     background-attachment: fixed; /* Делаем фон неподвижным при прокрутке (красивый эффект) */
-    background-color: red;
     /* Затемняющий слой (очень важная хитрость) */
     position: relative; /* Это нужно для позиционирования псевдоэлемента */
 
