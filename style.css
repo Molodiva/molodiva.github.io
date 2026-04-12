@@ -415,3 +415,10 @@ html {
     font-size: 48px;
     margin-bottom: 15px;
 }
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Убираем fixed на телефонах */
+        background-size: cover;
+    }
+}
