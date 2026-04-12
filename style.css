@@ -411,7 +411,7 @@ html {
     }
 }
 .service-icon {
-    color: #b8860b; !important /* Твой золотой цвет */
-    font-size: 40px;
+    color: #b8860b; /* Твой золотой цвет */
+    font-size: 48px;
     margin-bottom: 15px;
 }
