@@ -422,9 +422,3 @@ html {
         background-attachment: scroll; /* Убираем fixed на телефонах */
         background-size: cover;
     }
-}
-@media (max-width: 768px) {
-    body {
-        background-color: red !important;
-    }
-}
