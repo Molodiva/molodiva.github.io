@@ -170,11 +170,6 @@ html {
     border-color: rgba(184, 134, 11, 0.5);
 }
 
-.service-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
 .service-card h3 {
     color: #b8860b;
     font-size: 1.4rem;
@@ -417,6 +412,6 @@ html {
 }
 .service-icon {
     color: #b8860b; !important /* Твой золотой цвет */
-    font-size: 40px;
+    font-size: 48px;
     margin-bottom: 15px;
 }
