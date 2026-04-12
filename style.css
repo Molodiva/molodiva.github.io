@@ -357,7 +357,7 @@ html {
 }
 
 .contact-icon i {
-    color: #b8860b; /* Твой золотой цвет */
+    color: #b8860b; important /* Твой золотой цвет */
     font-size: 28px;
     width: 40px;
     text-align: center;
